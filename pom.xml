@@ -2,11 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.nequi</groupId>
-	<artifactId>nequi-payments-sdk-qa</artifactId>
+	<artifactId>nequi-payments-sdk</artifactId>
 	<packaging>jar</packaging>
-	<name>nequi-payments-sdk-qa</name>
+	<name>nequi-payments-sdk</name>
 	<version>2.0.0</version>
-	<description>SDK to use Nequi Payments Api from Java in QA.</description>
+	<description>SDK to use Nequi Payments Api from Java.</description>
 	<url>http://www.nequi.com</url>
 	<licenses>
 		<license>
@@ -123,28 +123,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.4.2</version>
-			</plugin>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<finalName>${project.name}-${project.version}-with-dependencies</finalName>
-					<archive>
-						<manifest/>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-					<appendAssemblyId>false</appendAssemblyId>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>

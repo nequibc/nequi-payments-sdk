@@ -20,7 +20,7 @@ import com.amazonaws.mobileconnectors.apigateway.annotation.Parameter;
 import com.amazonaws.mobileconnectors.apigateway.annotation.Service;
 import com.google.gson.JsonObject;
 
-@Service(endpoint = "https://api.sandbox.nequi.com/payments/v2")
+@Service(endpoint = "https://api.nequi.com/payments/v2")
 public interface NequiPaymentsGatewayClient {
     
     @Operation(path = "/-services-paymentservice-cancelqrpayment", method = "POST")
@@ -35,12 +35,24 @@ public interface NequiPaymentsGatewayClient {
         @Parameter(name = "Authorization", location = "header") String authorization
     );
     
+    @Operation(path = "/-services-paymentservice-createboughtqrrecord", method = "POST")
+    JsonObject servicesPaymentserviceCreateboughtqrrecordPost(
+        JsonObject body,
+        @Parameter(name = "Authorization", location = "header") String authorization
+    );
+    
     @Operation(path = "/-services-paymentservice-generatecodeqr", method = "POST")
     JsonObject servicesPaymentserviceGeneratecodeqrPost(
         JsonObject body,
         @Parameter(name = "Authorization", location = "header") String authorization
     );
-     
+    
+    @Operation(path = "/-services-paymentservice-getboughtqrrecords", method = "POST")
+    JsonObject servicesPaymentserviceGetboughtqrrecordsPost(
+        JsonObject body,
+        @Parameter(name = "Authorization", location = "header") String authorization
+    );
+    
     @Operation(path = "/-services-paymentservice-getstatuspayment", method = "POST")
     JsonObject servicesPaymentserviceGetstatuspaymentPost(
         JsonObject body,
