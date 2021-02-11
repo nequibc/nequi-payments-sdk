@@ -1,4 +1,4 @@
 #!groovy
 node {
-    sdkMavenPipeline('nequi-payments-sdk-qa')
+    sdkMavenPipeline('nequi-payments-sdk')
 }
